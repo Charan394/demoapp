@@ -4,7 +4,6 @@ class SampleResponse {
   final String title;
   final String body;
 
-
   SampleResponse({
     required this.userId,
     required this.id,
@@ -20,18 +19,12 @@ class SampleResponse {
     );
   }
 
-  
   Map<String, dynamic> toJson() {
-    return {
-      'userId': userId,
-      'id': id,
-      'title': title,
-      'body': body,
-    };
+    return {'userId': userId, 'id': id, 'title': title, 'body': body};
   }
 
-  static listFromJson(List<dynamic> data  ){
-    final list=(data ).map((e)=>SampleResponse.fromJson(e));
-    return list;
+  static List<SampleResponse> listFromJson(List<dynamic> data) {
+    final list = (data).map((e) => SampleResponse.fromJson(e));
+    return list.toList();
   }
 }

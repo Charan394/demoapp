@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
 
 class SampleButton extends StatelessWidget {
   final String text;
   final bool isLoading;
   final VoidCallback onPressed;
+
   const SampleButton({
     super.key,
     required this.text,
@@ -14,18 +14,15 @@ class SampleButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: isLoading ? null : onPressed,
-      child: isLoading
-          ? const SizedBox(
-              height: 20,
-              width: 20,
-              child: CircularProgressIndicator(
-                color: Colors.white,
-                strokeWidth: 3,
-              ),
-            )
-          : Text(text),
-    );
+    return isLoading
+        ? const SizedBox(
+          height: 24,
+          width: 24,
+          child: CircularProgressIndicator(
+            color: Colors.blueAccent,
+            strokeWidth: 3,
+          ),
+        )
+        : ElevatedButton(onPressed: onPressed, child: Text(text));
   }
 }

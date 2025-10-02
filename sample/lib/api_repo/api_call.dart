@@ -22,7 +22,7 @@ static Future<ApiResult<dynamic>> getData(String endpoint) async {
   
   }catch(e){
     return ApiResult(data: 'error', status: ApiStatus.failure);
-        //lets go
+        //lets
 
   }
 }
